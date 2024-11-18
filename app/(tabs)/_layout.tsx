@@ -15,6 +15,7 @@ export default function TabLayout() {
             }
         }}>
             <Tabs.Screen name='(home)' />
+            <Tabs.Screen name='(blogs)' />
             <Tabs.Screen name='settings' />
         </Tabs>
     )

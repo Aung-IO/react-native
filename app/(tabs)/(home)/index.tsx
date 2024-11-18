@@ -1,17 +1,24 @@
-import { Link } from "expo-router";
-import { Pressable, StyleSheet, Text, View } from "react-native";
+import { router } from "expo-router";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 export default function Index() {
   return (
     <View style={styles.container}>
       <Text>Home</Text>
 
-      <Link href="/(tabs)/(home)/details" asChild>
+<TouchableOpacity onPress={() => router.push("/details")} style={styles.button}>
+  <Text style={styles.text}>View Details</Text>
+</TouchableOpacity>
+
+      {/* <Button title="View Detail" onPress={() => router.push("/details")} /> */}
+
+
+      {/* <Link href="/(tabs)/(home)/details" asChild>
       
       <Pressable>
         <Text>View Details</Text>
       </Pressable>
-      </Link>
+      </Link> */}
     </View>
   );
 }
@@ -22,5 +29,14 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  button : {
+    borderRadius: 6,
+    backgroundColor: 'blue',
+    padding: 10,
+    
+  },
+  text : {
+    color: 'white'
   }
 })
